@@ -1,0 +1,36 @@
+<!--
+  Generated template for the TabForgot page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Forgot Password</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="padding-vertical">
+
+      <ion-list class="tab-login-form">
+
+        <h3>Password Reset/Recovery Form</h3>
+        <p class="secondary-font light-weight">Forgot your password? Happens to all of us. Type your email address for a reset</p>
+
+        <ion-item class="animated fadeInUp">
+          <ion-label primary floating >Email Address</ion-label>
+          <ion-input clearInput [(ngModel)]="emailAddress"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <button ion-button color="light" block class="secondary-font semi-bold" (click)="requestPasswordReset()">Request Password Reset</button>
+      <button ion-button color="dark" navPop block class="secondary-font semi-bold">Back to Login</button>
+    </div>
+
+</ion-content>

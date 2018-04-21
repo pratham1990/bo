@@ -1,0 +1,36 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// Importing our miscellaneous styles
+@import "../theme/breakpoint/breakpoint"; // Really Simple, Organized, Media Queries with Sass
+@import "../theme/device-sizes";      // Lists the different phone sizes we need to code for. Used in collaboration with breakpoint
+@import "../theme/app.fonts";         // The File that houses the google fonts for our app
+@import "../theme/app.components";    // A general style file for restyled ionic elements
+
+// Importing all our pages
+@import "../pages/tab-login/tab-login";
+@import "../pages/tab-forgot/tab-forgot";
+@import "../pages/tab-signup/tab-signup";
+@import "../pages/post-detail/post-detail";
+@import "../pages/search/search";
+@import "../pages/category/category";
+@import "../pages/bookmarks/bookmarks";
+@import "../pages/reset-password/reset-password";
+
+// Importing our custom components styles here, so they will available app wide
+@import "../custom-components/errorDialog/errorDialog";
+@import "../custom-components/sidemenu/sidemenu";

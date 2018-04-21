@@ -1,0 +1,11 @@
+page-tab-forgot {
+  .content-md, .content-ios {
+    background-color: color($colors, primary);
+  }
+  ion-content {
+    &.content-ios, .content-md {
+      background-color: color($colors, primary);
+      p,h1,h2,h3,h4,h5,h6 {color:white;}
+    }
+  }
+}

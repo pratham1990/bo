@@ -1,0 +1,50 @@
+page-bookmarks {
+  .no-bookmarks-yet, .not-logged-in {
+    padding: 0 26px;
+    color: black;
+    @extend .secondary-font;
+    text-transform: lowercase;
+    background: #eee;
+    padding-top: 10px;
+    padding-bottom: 24px;
+    margin-top: 0;
+    letter-spacing: 0px;
+  }
+  .not-logged-in {
+    text-transform: capitalize;
+  }
+  .mini-post-section {
+    background-color: #ecf0f1;
+
+    h6.mini-post-section--title {
+      display: inline-block;
+      // background: color($colors, primary);
+      padding: 0;
+      border-radius: 100px;
+      color: darken(color($colors, primary), 50%);
+    }
+
+    ion-list ion-item.item {
+      margin: 6px 26px;
+      padding: 0;
+      // border-bottom: 1px solid #ccc;
+    }
+
+    ion-list ion-item.item ion-thumbnail {
+        min-width: 4rem;
+        min-height: 4rem;
+        max-width: 4rem;
+        max-height: 4rem;
+        img {
+          min-width: auto;
+        }
+    }
+
+    ion-list ion-item.item .item-inner .input-wrapper ion-label h1 {
+      color: #333;
+      font-size: 2rem;
+      text-transform: capitalize;
+    }
+
+  }
+}

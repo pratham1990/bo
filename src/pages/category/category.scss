@@ -1,0 +1,103 @@
+$category-box-height : 120px;
+page-category {
+  .item-md h1{
+    margin: 5px 0 2px !important;
+  }
+  .toolbar .toolbar-background {
+    background: transparent !important;
+    border-bottom: none;
+  }
+
+  .toolbar button.bar-button span {
+    color: white;
+    padding-left: 6px;
+    padding-top: 6px;
+  }
+
+  ion-content .scroll-content {
+    margin-top: $category-box-height !important;
+    border-bottom: 1px solid transparent;
+  }
+
+  .fixed-content {
+    margin-top: 0 !important;
+  }
+
+  .category {
+    .category-box {
+      padding: 0;
+      position: relative;
+      z-index: 2;
+      height: $category-box-height;
+
+      button {
+        position: absolute;
+        color: white;
+      }
+
+      &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%; min-height: 100%;
+        background: darken(color($colors, primary), 50%);
+        content: '';
+        top:0;
+      }
+      img.banner-image {
+        display: block;
+        width: 100%;
+        background: #333;
+      }
+
+      h1 {
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        position: absolute;
+        z-index: 20;
+        width: 100%;
+        // top: 10px;
+        line-height: 0.8em;
+        font-size: 38px;
+        color:white;
+        padding-left: 25px;
+        padding-right: 25px;
+        @extend .primary-font;
+      }
+    }
+    .category-label {
+      text-align: center;
+      background: color($colors, primary);
+      border-radius: 30px;
+      padding: 6px 12px;
+      color: white;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 11px;
+      position: absolute;
+      left: 50%;
+      bottom: -33px;
+      transform: translate(-50%, -50%);
+      z-index: 19;
+    }
+    .category-content {
+      padding-top: 7px;
+    }
+  }
+  .mini-post-section {
+    &.category-view {
+      background: none;
+      padding: 0;
+      ion-list ion-item.item{
+        margin:0;
+        border-bottom:1px solid transparentize(#bdc3c7, 0.6);
+      }
+
+      ion-list ion-item.item .item-inner .input-wrapper ion-label h1 {
+        color: grey;
+        font-size: 23px;
+      }
+    }
+  }
+
+}

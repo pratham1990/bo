@@ -1,0 +1,57 @@
+.mini-section-margin {
+  margin-left: 26px;
+  margin-right: 26px;
+}
+.mini-post-section {
+  background-color: color($colors, primary);
+  padding:13px 0;
+  color : white;
+  @extend .secondary-font;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  h6.mini-post-section--title{
+    font-size: 1.3rem;
+    @extend .mini-section-margin;
+  }
+
+  ion-list {
+    margin:0;
+    ion-item.item {
+      &:first-child {
+        border-top:1px;
+      }
+      margin: 13px 0;
+      background: transparent;
+      padding:16px 26px;
+      align-items: flex-start;
+      border-bottom: 1px solid transparentize(white, 0.8);
+      .item-inner {
+        border-bottom: none;
+      }
+      ion-thumbnail {
+        min-width: 8rem;
+        min-height: 8rem;
+      }
+      ion-thumbnail img {
+        min-width: 8rem;
+        max-height: 8rem;
+        height: auto;
+      }
+      .item-inner .input-wrapper {
+        // align-items: flex-start;
+        // padding:0; margin:0;
+        letter-spacing: 0;
+        ion-label {
+          white-space: normal;
+          margin-top: 4px;
+        }
+        ion-label h1 {
+          @extend .primary-font.bold-weight;
+          text-transform:none;
+          color: white;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

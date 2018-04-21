@@ -1,0 +1,50 @@
+<!--
+  Generated template for the TabLogin page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class="logo-navbar">
+    <img src="assets/login-logo.png" alt="">
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list class="tab-login-form">
+
+    <ion-item class="animated fadeInUp">
+      <ion-label primary floating >Email Address</ion-label>
+      <ion-input clearInput [(ngModel)]="newEmail"></ion-input>
+    </ion-item>
+
+    <ion-item class="animated fadeInDown">
+      <ion-label primary floating >Password</ion-label>
+      <ion-input type="password" [(ngModel)]="newPassword" clearInput></ion-input>
+    </ion-item>
+
+    <button ion-button color="light" block class="secondary-font semi-bold animated fadeIn delay-1-second" (click)="Login(newEmail, newPassword)">Login with Email</button>
+    <button ion-button color="light" block class="secondary-font semi-bold animated fadeIn delay-1-second" (click)="gotoHomePage()">Skip Login</button>
+
+    <ion-row>
+      <ion-col><a class="text-center block no-underline" [navPush]="forgotPage">Forgot Password?</a></ion-col>
+    </ion-row>
+
+  </ion-list>
+
+  <h6 class="divider uppercase">Or</h6>
+
+  <!-- Social Login (Coming Soon in an update) -->
+  <!-- <div class="">
+    <button ion-button color="dark" block class="secondary-font semi-bold">
+      <ion-icon name="logo-facebook" class="far-left"></ion-icon>
+      Login with Facebook
+    </button>
+  </div> -->
+
+  <div class="terms-and-services">By using Magaza you agree with our Terms</div>
+</ion-content>

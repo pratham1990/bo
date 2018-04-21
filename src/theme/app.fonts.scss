@@ -1,0 +1,75 @@
+/*
+    App Wide Fonts and various weights
+*/
+@font-face {
+  font-family: "Sharad76";
+  src: url("../assets/fonts/subset-Sharad76-Regular.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "Yrsa";
+    src: url("../assets/fonts/Yrsa-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Yrsa Bold";
+    src: url("../assets/fonts/Yrsa-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../assets/fonts/Montserrat-Light.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("../assets/fonts/Montserrat-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Montserrat SemiBold";
+    src: url("../assets/fonts/Montserrat-SemiBold.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("../assets/fonts/Montserrat-Bold.ttf") format('truetype');
+}
+
+.primary-font {
+  font-family: "Sharad76" !important;
+  &.bold-weight {
+    font-family: "Sharad76" !important;
+  }
+  &.light-weight {
+    // No light defined for Yrsa
+  }
+  &.semi-bold {
+    // No semi bold fo Yrsa
+  }
+}
+
+.secondary-font {
+  font-family: "Sharad76";
+
+  &.bold-weight {
+    font-family: "Sharad76";
+  }
+  &.light-weight {
+    font-family: "Sharad76";
+  }
+  &.semi-bold {
+    font-family: "Sharad76";
+  }
+}
+
+.bold {font-weight:bold;}
+.text-right {text-align: right;}
+.text-left {text-align: left;}
+.text-center {text-align: center;}
+.uppercase {text-transform:uppercase;}
+.no-margin {margin:0;}
+.text-ellipsis {
+	text-overflow: ellipsis;
+}
+.no-underline {text-decoration: none;}

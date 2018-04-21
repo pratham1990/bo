@@ -1,0 +1,14 @@
+{
+  "name": "MagazaFinal",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": "https://www.bobhata.com/"
+    }
+  ]
+}

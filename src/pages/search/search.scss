@@ -1,0 +1,48 @@
+page-search {
+  .search-page {
+  background-color: #333;
+  .mini-post-section {
+    background-color: #333;
+  }
+  .mini-post-section {
+    padding-top:5px;
+    ion-list ion-item.item {
+      margin:0;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.app-search-form {
+  background-color: #f5f5f5;
+  h6 {
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 25px 0 0 17px;
+    color: #666;
+  }
+  ion-searchbar {
+    padding: 8px 0px;
+    background-color: color($colors, primary);
+    .searchbar-input-container input.searchbar-input {
+      color: white;
+      .searchbar-search-icon {
+        color: transparentize(white, 0.4);
+        &::focus {
+          color: white;
+        }
+      }
+      &::placeholder {
+        color: transparentize(white, 0.4);
+      }
+    }
+    .searchbar-input-container .searchbar-input{
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}
+
+}

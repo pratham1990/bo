@@ -1,0 +1,141 @@
+page-page-detail {
+  ion-navbar {
+    border-bottom: 1px solid #ccc;
+  }
+  .single-post {
+    position: relative;
+    &:nth-child(odd) {
+      background-color: #BDC3C7;
+    }
+    &:nth-child(even) {
+      background-color: #ECF0F1;
+    }
+    .feed-image {
+      width: 100%;
+      height: 100vw;
+      display: block;
+      background: #333;
+      background-size: cover;
+    }
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%; min-height: 100%;
+      background: transparentize(#434343, 0.5);
+      content: ''
+    }
+    .close-post-button {
+      position: absolute;
+      top: 20px;
+      left: 6%;
+      ion-icon {
+        font-size: 4rem;
+        color: white;
+        font-weight: bold;
+      }
+    }
+    .app-feed-category {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 70%;
+      width: calc(100%);
+      left: -43%;
+      color: white;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 6px;
+      &:before {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+    .app-feed-title {
+      position: absolute;
+      bottom: 10px;
+      padding: 10px 50px 10px 50px;
+      color: white;
+      h6 {
+        font-size: 13px;
+      }
+      .post-title {
+        font-size: 3.0rem;
+        line-height: 1.0;
+        @include breakpoint($iphone6) {
+    			font-size: 4.0rem;
+    		}
+      }
+    }
+    .app-feed-date {
+      position: absolute;
+      right: 20px;
+      color: white;
+      top: 20px;
+      h1 {
+        text-align: center;
+        margin:0;
+        font-size: 3.5rem;
+      }
+      h6 {
+        text-align: center;
+        margin-top: -10px;
+      }
+    }
+    .share-post-button {
+      position: absolute;
+      bottom: 16px;
+      color: white;
+      right: 24px;
+      font-size: 3rem;
+    }
+  }
+
+  .post-content {
+    .post-rendered-content {
+      img {
+        height: auto;
+        padding: 10px;
+        background: #ecf0f1;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background: #efefef;
+        padding: 10px;
+        border:1px solid #ccc;
+      }
+    }
+    padding: 26px 19px 0 19px;
+    @extend .secondary-font.light-weight; // app/theme/app.fonts.scss
+    line-height: 2.6rem;
+    font-size: 1.6rem;
+    p {
+      line-height: 2.6rem;
+      font-size: 1.6rem;
+    }
+    .post-author {
+      @extend .padding-vertical;
+      color: transparentize(black, 0.3);
+      text-transform: capitalize;
+    }
+    .post-social-stats {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+      ion-icon {
+        padding-right: 3px;
+        font-size: 2.1rem;
+        color: #747474;
+      }
+      span.post-stat {
+        font-size: 2.0rem;
+        @extend .secondary-font.semi-bold;
+        color: #747474;
+      }
+    }
+  }
+
+}

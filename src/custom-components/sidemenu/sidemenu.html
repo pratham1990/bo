@@ -1,0 +1,44 @@
+<ion-content>
+  <!-- Profile Section -->
+  <!-- <div class="profile-details">
+    <h6 class="profile-salutation">Hello,</h6>
+    <h1 *ngIf="Username" class="profile-title">{{Username}}</h1>     
+    <img class="profile-picture" src="{{ProfileImage}}" alt=""> <br> 
+    <div class="button-section">
+      <button *ngIf="!userIsAuthenticated" (click)="gotoLoginPage()" ion-button color="white" outline small>Login/Signup</button>
+    </div>
+  </div>
+  -->
+  <!-- End Profile Section -->
+
+  <!-- Category List -->
+  <ion-list>
+    <!-- Repeat section for category list. Will only show if there's at least on category -->
+    <!-- <ion-item [navPush]="bookmarks">Bookmarks <ion-badge *ngIf="numberOfBookmarks > 0" danger item-right>{{numberOfBookmarks}}</ion-badge></ion-item> -->
+    <h6 class="secondary-font uppercase profile-list-header">Categories</h6>
+    <ion-item menuClose ion-item
+        *ngFor="let category of categoryMenu"
+        (click) = "gotoCategory(category.tid,category.name)">
+          {{category.name}}
+    </ion-item>
+  </ion-list>
+  <!-- End Category List -->
+
+  <!-- Page List (Optional) -->
+  <!-- Repeat section for pages list. Will only show if there's at least on pages -->
+  <!-- <ion-list *ngIf="pageMenu">
+    <h6 class="secondary-font uppercase profile-list-header">Pages</h6>
+    <ion-item menuClose [innerHTML]="page.title.rendered" ion-item class="no-wrap"
+        *ngFor="let page of pageMenu"
+        (click)="gotoDetailPage(page.id)">
+    </ion-item>
+  </ion-list> -->
+  <!-- Page List -->
+
+  <!-- Only show logout button if user is logged in -->
+  <!--
+    <ion-list>
+    <ion-item *ngIf="userIsAuthenticated" menuClose (click)="logMeOut()" class="logout">Logout</ion-item>
+  </ion-list>
+  -->
+</ion-content>

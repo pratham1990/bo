@@ -1,0 +1,55 @@
+.tab-login-form {
+  a,p {color: white;}
+
+  ion-item.item {
+    &.item-block:first-child {
+      border-top:0px solid transparent;
+    }
+    background: none;
+    border-top:none;
+    padding-left: 0;
+    padding-right: 0;
+    // border-bottom:1px solid transparentize(white, 0.5);;
+    .item-inner .input-wrapper ion-label {
+      color:transparentize(white, 0.5);
+    }
+    ion-input input.text-input {
+      color: white;
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+  button {
+    @include breakpoint($iphone5s) {
+      margin:20px 0;
+		}
+    @include breakpoint($iphone6) {
+      margin:40px 0;
+		}
+  }
+}
+
+.terms-and-services {
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  left:0;
+  right:0;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+page-tab-login {
+  ion-content {
+    background-color: color($colors, primary) !important;
+    p,h1,h2,h3,h4,h5,h6 {color:white;}
+  }
+  .tab-login {
+    ion-navbar {
+      background-color: none;
+    }
+  }
+
+}

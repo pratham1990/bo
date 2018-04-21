@@ -1,0 +1,217 @@
+/*
+    App wide styling for generic components/elements
+*/
+
+.flush {
+  padding: 0;
+}
+
+ion-item.no-wrap .item-inner .input-wrapper ion-label {
+  white-space: normal;
+}
+
+// For the Header in pages/login/login.html
+.logo-navbar {
+  border:none;
+  text-align: center;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  .toolbar-background {
+    border-color: transparent;
+  }
+}
+
+
+
+// Addition to buttons to have far left or far right icons
+button span.button-inner ion-icon {
+  &.far-left:first-child {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  &.far-right:last-child {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+}
+
+// Extra Padding to account for the statusbar in iOS
+ion-toast .toast-wrapper.toast-top {
+  top: 10px !important;
+}
+
+// styling for error messages in toast
+.toast-message-error .toast-wrapper {
+  background: red;
+  color: white;
+  .toast-button span {
+    color: white;
+  }
+}
+
+// styling for success messages in toast
+.toast-message-success .toast-wrapper {
+  background: #2ecc71;
+  color: white;
+  .toast-button span {
+    color: white;
+  }
+}
+
+// styling for success messages in toast
+.toast-message-warning .toast-wrapper {
+  background: #f39c12;
+  color: white;
+  .toast-button span {
+    color: white;
+  }
+}
+
+// Font size for Text in tabs
+ion-tabs.tabs .tabbar a.tab-button span.tab-button-text {
+  // font-size: 18px !important;
+  @extend .secondary-font;
+}
+
+// App wide divider. Super versatile I tell ya!
+.divider, .app-divider {
+        margin:10px auto;
+        overflow:hidden;
+        text-align:center;
+        line-height:1.2em;
+
+        &:before,&:after{
+        	content:"";
+	        vertical-align:top;
+	        display:inline-block;
+	        width:50%;
+	        height:0.65em;
+	        border-bottom:1px solid #ccc;
+	        margin:0 2% 0 -55%;
+        }
+        &:after {
+        	margin:0 -55% 0 2%;
+        }
+
+        &.divider-text-left {
+        	position: relative;
+        	text-align: left;
+        	&:after {
+        		width: 74%;
+        	}
+        	&:before {
+        		display: none;
+        	}
+        }
+
+        &.divider-text-right {
+        	position: relative;
+        	text-align: right;
+        	&:before {
+        		width: 74%;
+        	}
+        	&:after {
+        		display: none;
+        	}
+        }
+    }
+    // Padding (Old habit from ionic v1)
+    .padding {padding:10px;}
+    .padding-horizontal {padding-left: 10px; padding-right: 10px;}
+    .padding-vertical {padding-top: 10px; padding-bottom: 10px;}
+
+    .padding-double {padding: 20px;}
+    .padding-double-horizontal {padding-left: 20px; padding-right: 20px;}
+    .padding-double-vertical {padding-top: 20px; padding-bottom: 20px;}
+
+    .block {display: block;}
+
+
+    // Animation modifications for CSSAnimate plugin. Self explanatory
+    .delay-1-second {
+      -webkit-animation-delay: 1s;
+    }
+    .duration-3-seconds {
+      -webkit-animation-duration: 3s;
+    }
+
+    // CSS Loader Animation
+    .app-spinner {
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+
+      margin: 100px auto;
+      -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+      animation: sk-rotateplane 1.2s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-rotateplane {
+      0% { -webkit-transform: perspective(120px) }
+      50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+      100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+    }
+
+    @keyframes sk-rotateplane {
+      0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+      }
+      50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+      }
+      100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      }
+    }
+
+
+// App wide style overide for LoadingController
+ion-loading {
+  // We're just offsetting the left margin of the .loading-content
+  // so anything we place in it sits well.
+  &.loading-ios .loading-spinner + .loading-content {
+    margin-left: 0;
+  }
+  &.loading-md .loading-spinner + .loading-content {
+    margin-left: 0;
+  }
+  .loading-spinner + .loading-content{
+    margin-left: 0;
+  }
+
+  ion-spinner {
+    // we're hiding the default ion-spinner so our fancier spinner can take the spotlight
+    display: none;
+  }
+
+  // we're styling the wrapper for our loader as well
+  .loading-wrapper {
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    .loading-content {
+      width: 100%;
+      .app-spinner {
+        background-color: color($colors, primary);
+      }
+    }
+  }
+}
+
+// Padding (Old habit from ionic v1)
+.padding {padding:10px;}
+.padding-horizontal {padding-left: 10px; padding-right: 10px;}
+.padding-vertical {padding-top: 10px; padding-bottom: 10px;}
+
+.padding-double {padding: 20px;}
+.padding-double-horizontal {padding-left: 20px; padding-right: 20px;}
+.padding-double-vertical {padding-top: 20px; padding-bottom: 20px;}
+
+.block {display: block;}

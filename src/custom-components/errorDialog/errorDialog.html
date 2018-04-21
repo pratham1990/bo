@@ -1,0 +1,10 @@
+<div class="mg-error-box" *ngIf="showError">
+  <div padding>
+      <h1>
+        <ion-icon name="alert"></ion-icon>
+      </h1>
+      <h3 class="secondary-font light-weight">Hmmm. Something's not right.</h3>
+    <p class="secondary-font light-weight">{{FriendlyErrorMsg}}</p>
+  </div>
+  <button (click)="onClickButton()" ion-button full class="secondary-font light-weight"><ion-icon name="refresh"></ion-icon> Reload</button>
+</div>

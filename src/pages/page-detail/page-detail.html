@@ -1,0 +1,52 @@
+<!--
+  Generated template for the PostDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header  [hidden]="!didNotLoad">
+
+  <ion-navbar>
+    <ion-title>Single Post</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- Error Message Dialog Component -->
+  <error-dialog [showError]="didNotLoad" (DialogButtonTap)="loadPost(false)"></error-dialog>
+
+  <div *ngIf="!didNotLoad">
+    <div class="single-post">
+      <img src="{{singlePostData.better_featured_image?.media_details.sizes.medium.source_url}}" class="feed-image">
+      <div class="app-feed-title">
+        <h1 class="primary-font bold-weight post-title animated fadeInUp">{{singlePostData.title?.rendered}}</h1>
+      </div>
+      <div class="close-post-button" navPop>
+      <ion-icon name="close"></ion-icon>
+      </div>
+
+      <div  class="app-feed-date animated fadeIn">
+        <h1 class="primary-font bold-weight">{{singlePostData.date | date:'dd'}}</h1>
+        <h6 class="primary-font light-weight">{{singlePostData.date | date:'MMM'}}</h6>
+      </div>
+      <div class="share-post-button" (click)="shareOptionsAndShare(singlePostData.title?.rendered , '' , singlePostData.guid?.rendered)"><ion-icon name="share-alt"></ion-icon></div>
+    </div>
+    <div class="post-content">
+      <div class="post-rendered-content" *ngIf="singlePostData.content" [innerHTML]="singlePostData.content"></div>
+
+      {{singlePostData.listicle}}
+      <div class="post-rendered-content" *ngFor="let listicle of singlePostData.listicle">
+          <h2 [ngIf]="listicle.title" [innerHTML]="listicle.title"></h2>
+          <img *ngIf="listicle.image" src="{{listicle.image}}" class="feed-image">
+          <iframe *ngIf="listicle.video" src="{{listicle.video}}"></iframe>
+          <div class="post-rendered-content" [innerHTML]="listicle.description"></div>
+      </div>
+
+      <h6 class="post-author divider divider-text-left">
+        Author : {{singlePostData._embedded?.author[0].name}}
+      </h6>
+    </div>
+  </div>
+</ion-content>

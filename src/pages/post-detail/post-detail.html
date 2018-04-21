@@ -1,0 +1,73 @@
+<!--
+  Generated template for the PostDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header  [hidden]="!didNotLoad">
+
+  <ion-navbar>
+    <ion-title>{{singlePostData.marathi_title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- Error Message Dialog Component -->
+  <error-dialog [showError]="didNotLoad" (DialogButtonTap)="loadPost(false)"></error-dialog>
+
+  <div *ngIf="!didNotLoad">
+    <div class="single-post">
+      <!-- If there's a featured image, Show it -->
+      <img *ngIf="singlePostData.image" mg-img-preloader="{{singlePostData.image}}" class="feed-image">
+
+      <!-- If there is no featured image, show a default image instead. -->
+      <!-- <img *ngIf="!singlePostData.better_featured_image?.media_details?.sizes?.medium?.source_url" src="assets/blank-default-feed-bg.png" class="feed-image"> -->
+
+      <div class="app-feed-title">
+        <h1 class="primary-font bold-weight post-title" [innerHTML]="singlePostData.marathi_title"></h1>
+      </div>
+      <div class="close-post-button" navPop>
+      <ion-icon name="close"></ion-icon>
+      </div>
+      <div  class="app-feed-date animated fadeIn">
+        <h1 class="primary-font bold-weight">{{singlePostData.date | date:'dd'}}</h1>
+        <h6 class="primary-font light-weight">{{singlePostData.date | date:'MMM'}}</h6>
+      </div>
+      <div class="share-post-button">
+
+        <button ion-button clear color="light" (click)="shareOptionsAndShare(singlePostData.marathi_title , '' ,singlePostData.node_url)">
+          <ion-icon name="share-alt"></ion-icon>
+        </button>
+
+        <bookmark *ngIf="isAuthenticated"
+          [isClicked] = isBookmarked
+          postID="{{singlePostData.id}}"
+          title="{{singlePostData.marathi_title}}"
+          url="{{singlePostData.node_url}}"
+          imgUrl="{{singlePostData.image}}"
+          (onBookmarkClick)="saveBookmark($event)">
+        </bookmark>
+
+      </div>
+    </div>
+
+    <div class="post-content">
+      <iframe *ngIf="singlePostData.videoCover" [src]="singlePostData.videoCover | safe"></iframe>
+          
+      <div class="post-rendered-content" *ngIf="singlePostData.content" [innerHTML]="singlePostData.content"></div>
+      
+      <div class="post-rendered-content" *ngFor="let listicle of singlePostData.listicle">
+          <h2 *ngIf="listicle.title" [innerHTML]="listicle.title"></h2>
+          <img *ngIf="listicle.image" src="{{listicle.image}}" class="feed-image">
+          <iframe *ngIf="listicle.video" src="{{listicle.video}}"></iframe>
+          <div class="post-rendered-content" [innerHTML]="listicle.description"></div>
+      </div>
+      <h6 class="post-author divider divider-text-left">
+        Author : {{singlePostData.author}}
+      </h6>
+    </div>
+
+  </div>
+</ion-content>
